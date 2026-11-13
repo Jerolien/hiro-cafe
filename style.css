@@ -1,0 +1,133 @@
+:root {
+  --gelap: #262626;
+  --krem: #f3e9cf;
+  --terakota: #b5603f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Archivo", Arial, sans-serif;
+  background-color: var(--gelap);
+  color: var(--krem);
+}
+
+/* ===== Layout utama (Grid) ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Kolom kiri: foto ===== */
+.hero-foto {
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #6d4c41; /* warna cadangan kalau foto belum ada */
+}
+
+/* ===== Kolom kanan: isi (Flexbox) ===== */
+.hero-isi {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 56px;
+  background-color: var(--gelap);
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.teks {
+  margin: auto 0;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--krem);
+}
+
+.deskripsi {
+  max-width: 420px;
+  margin: 0 0 32px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* ===== Tombol ===== */
+.tombol-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tombol {
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--krem);
+}
+
+.tombol-isi {
+  background-color: var(--terakota);
+  border: 2px solid var(--terakota);
+}
+
+.tombol-garis {
+  border: 2px solid var(--krem);
+}
+
+.tombol-isi:hover {
+  background-color: #98502f;
+  border-color: #98502f;
+}
+
+.tombol-garis:hover {
+  background-color: var(--krem);
+  color: var(--gelap);
+}
+
+/* ===== Ikon sosial ===== */
+.sosial {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.sosial a {
+  color: var(--krem);
+}
+
+.sosial a:hover {
+  color: var(--terakota);
+}
+
+/* ===== Responsif: di layar kecil, susun atas-bawah ===== */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-foto {
+    min-height: 40vh;
+  }
+
+  .hero-isi {
+    padding: 32px 24px;
+  }
+
+  .teks {
+    margin: 40px 0;
+  }
+}
