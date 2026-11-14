@@ -3,110 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hiro Cafe | Kopi dan Cerita</title>
+  <title>Hiro Cafe | Kopi Pilihan, Diseduh dengan Teliti</title>
+  <meta name="description" content="Hiro Cafe di Tangerang menyajikan kopi dari biji pilihan petani lokal, disangrai segar dan diseduh dengan teliti. Pesan di tempat atau antar ke rumah.">
+  <meta name="theme-color" content="#2e1d16">
+
+  <!-- Pratinjau saat link dibagikan (WhatsApp, Instagram, dll.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hiro Cafe | Kopi Pilihan, Diseduh dengan Teliti">
+  <meta property="og:description" content="Kopi dari biji pilihan petani lokal, disangrai segar dan diseduh dengan teliti.">
+  <meta property="og:image" content="assets/images/og/hiro-cafe-og.jpg">
+  <meta property="og:locale" content="id_ID">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="hiro">
+  <!-- Kumpulan ikon SVG minimalis (dipakai lewat <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+    </symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24">
+      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/>
+      <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+      <circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
+    </symbol>
+  </svg>
 
-    <div class="hero-foto" role="img" aria-label="Barista Hiro Cafe menuang susu ke dalam kopi"></div>
-    <div class="hiro-isi">
-      <p class="logo">HIRO Cafe</p>
+  <!-- ===== Hero + Navbar ===== -->
+  <header class="hero" id="beranda">
+    <picture class="hero-media">
+      <source media="(max-width: 700px)" srcset="assets/images/hero/hero-cafe-interior-mobile.jpg">
+      <img
+        src="assets/images/hero/hero-cafe-interior.jpg"
+        alt="Suasana interior Hiro Cafe dengan meja kayu dan cahaya hangat dari jendela"
+        width="1920" height="1080"
+        fetchpriority="high">
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="teks">
-       <h1>Meracik Ritual, Satu Cangkir Sekali Waktu.</h1>
-          <p class="deskripsi">
-             Selamat datang di Hiro Cafe. Nikmati kopi dari biji pilihan
-             di tempat yang sederhana dan nyaman.
-          </p>
-        <div class="tombol-wrap">
-          <a href="#menu" class="tombol tombol-isi">Lihat Menu</a>
-          <a href="#lokasi" class="tombol tombol-garis">Cari Lokasi</a>
-        </div>
-      </div>
+    <nav class="navbar" aria-label="Navigasi utama">
+      <a href="#beranda" class="logo">Hiro<span>Cafe</span></a>
 
-      <div class="sosial">
-        <a href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-            <circle cx="12" cy="12" r="11"/>
-            <text x="12" y="17" text-anchor="middle" font-size="15" font-weight="bold" fill="#262626">f</text>
-          </svg>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-            <rect x="2" y="5" width="20" height="14" rx="4"/>
-            <polygon points="10,9 16,12 10,15" fill="#262626"/>
-          </svg>
-        </a>
-      </div>
-    </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-expanded="false">
+        <svg class="ikon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
 
-  </div>
-  <main class="konten">
-
-    <section id="menu">
-      <h2>Menu Favorit</h2>
-      <div class="grid-menu">
-        <article class="kartu">
-          <span class="emoji">☕</span>
-          <h3>Kopi Susu Hiro</h3>
-          <p>Espresso, susu segar, dan gula aren.</p>
-          <p class="harga">Rp 22.000</p>
-        </article>
-        <article class="kartu">
-          <span class="emoji">🧊</span>
-          <h3>Americano Dingin</h3>
-          <p>Segar, bersih, dan pas untuk siang hari.</p>
-          <p class="harga">Rp 18.000</p>
-        </article>
-        <article class="kartu">
-          <span class="emoji">🍵</span>
-          <h3>Matcha Latte</h3>
-          <p>Matcha pilihan dengan susu yang lembut.</p>
-          <p class="harga">Rp 25.000</p>
-        </article>
-        <article class="kartu">
-          <span class="emoji">🥐</span>
-          <h3>Croissant Butter</h3>
-          <p>Renyah di luar, lembut di dalam.</p>
-          <p class="harga">Rp 20.000</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="tentang">
-      <h2>Tentang Hiro Cafe</h2>
-      <p class="teks-tentang">
-        Hiro Cafe adalah tempat sederhana untuk menikmati kopi yang diseduh
-        dengan teliti. Cocok untuk bekerja, belajar, atau sekadar duduk
-        sebentar setelah hari yang panjang.
-      </p>
-    </section>
-
-    <section id="lokasi">
-      <h2>Kunjungi Kami</h2>
-      <ul class="info">
-        <li>📍 Jl. Contoh No. 12, Tangerang</li>
-        <li>🕐 Setiap hari, 08.00 - 22.00</li>
-        <li>📱 @hirocafe</li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#terlaris">Menu</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li class="keranjang" aria-label="Jumlah item di keranjang">
+          <svg class="ikon" aria-hidden="true"><use href="#i-cart"></use></svg>
+          <span id="jumlah-keranjang" aria-live="polite">0</span>
+        </li>
       </ul>
+    </nav>
+
+    <div class="hero-isi">
+      <p class="sapaan" id="sapaan"></p>
+      <h1>Nikmati Seni <span>Secangkir Kopi.</span></h1>
+      <hr class="garis">
+      <p class="hero-teks">
+        Jelajahi pilihan biji kopi buatan tangan,
+        diseduh dengan teliti sampai rasanya pas.
+      </p>
+      <a href="#terlaris" class="tombol">Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Menu Terlaris ===== -->
+    <section class="terlaris" id="terlaris">
+      <h2 class="judul-garis">Menu Terlaris</h2>
+      <p class="sub">
+        Temukan racikan paling populer yang disukai para pencinta kopi.
+      </p>
+
+      <div class="grid-produk" id="grid-produk">
+        <!-- Kartu produk dibuat otomatis oleh js/script.js -->
+      </div>
+    </section>
+
+    <!-- ===== Banner Antar ===== -->
+    <section class="banner" id="layanan">
+      <img
+        class="banner-gambar"
+        src="assets/images/banner/kopi-antar-rumah.jpg"
+        alt="Kemasan biji kopi Hiro Cafe tersusun rapi di atas meja kayu"
+        width="1920" height="800"
+        loading="lazy">
+      <div class="banner-overlay" aria-hidden="true"></div>
+      <div class="banner-isi">
+        <h2>Kopi Diantar <span>Sampai Rumah.</span></h2>
+        <hr class="garis">
+        <p>
+          Gabung Hiro Club dan terima kopi favoritmu sesuai jadwal.
+          Pilih antar mingguan, dua mingguan, atau bulanan.
+        </p>
+        <a href="#kontak" class="tombol">Gabung Sekarang</a>
+      </div>
+    </section>
+
+    <!-- ===== Tentang ===== -->
+    <section class="tentang" id="tentang">
+      <figure class="tentang-foto">
+        <img
+          src="assets/images/about/barista-hiro-cafe.jpg"
+          alt="Barista Hiro Cafe menuang susu ke dalam espresso"
+          width="1000" height="1250"
+          loading="lazy">
+      </figure>
+
+      <div class="tentang-teks">
+        <h2>Tentang <span>Cerita Kami</span></h2>
+        <p>
+          Di <strong>Hiro Cafe</strong>, kami percaya setiap cangkir kopi punya cerita.
+          Biji kopi kami dipilih dari petani lokal dan disangrai dalam jumlah kecil
+          supaya rasanya selalu segar.
+        </p>
+        <p>
+          Entah kamu penikmat espresso sejati atau hanya ingin kopi enak setelah
+          kuliah, selalu ada racikan yang cocok untukmu.
+        </p>
+        <p class="tanda-tangan">Tim Hiro Cafe</p>
+      </div>
+    </section>
+
+    <!-- ===== Kenapa Kami ===== -->
+    <section class="alasan" id="alasan">
+      <h2>Kenapa Hiro Cafe?</h2>
+      <div class="grid-alasan">
+        <article class="alasan-item">
+          <span class="alasan-ikon"><svg class="ikon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>
+          <h3>Biji Pilihan</h3>
+          <p>Dipilih langsung dari petani lokal.</p>
+        </article>
+        <article class="alasan-item">
+          <span class="alasan-ikon"><svg class="ikon" aria-hidden="true"><use href="#i-flame"></use></svg></span>
+          <h3>Sangrai Segar</h3>
+          <p>Disangrai dalam jumlah kecil setiap minggu.</p>
+        </article>
+        <article class="alasan-item">
+          <span class="alasan-ikon"><svg class="ikon" aria-hidden="true"><use href="#i-truck"></use></svg></span>
+          <h3>Antar Cepat</h3>
+          <p>Pesanan sampai dengan kemasan yang aman.</p>
+        </article>
+      </div>
     </section>
 
   </main>
 
-  <footer class="footer-utama">
-    <p>&copy; 2026 Hiro Cafe. Proyek latihan.</p>
+  <!-- ===== Footer / Kontak ===== -->
+  <footer class="footer" id="kontak">
+    <h2>Kunjungi Kami</h2>
+    <p id="status-buka" class="status"></p>
+    <ul class="info">
+      <li><svg class="ikon" aria-hidden="true"><use href="#i-pin"></use></svg> Jl. Contoh No. 12, Tangerang</li>
+      <li><svg class="ikon" aria-hidden="true"><use href="#i-clock"></use></svg> Setiap hari, 08.00 - 22.00</li>
+      <li>
+        <svg class="ikon" aria-hidden="true"><use href="#i-instagram"></use></svg>
+        <a href="https://www.instagram.com/matthewhenshel" target="_blank" rel="noopener noreferrer">@hirocafe</a>
+      </li>
+    </ul>
+    <p class="hak-cipta">&copy; 2026 Hiro Cafe. Proyek latihan.</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
